@@ -1,0 +1,230 @@
+/* =============== */
+/* SHARED CSS      */
+/* =============== */
+
+:root {
+    /* Fonts Family */
+    --ff-barlow: "Barlow Semi Condensed", sans-serif;
+
+    /* Fonts Weight */
+    --fw-regular: 400;
+    --fw-bold: 500;
+
+    /* Fonts Size */
+    --fs-s: 11px;
+    --fs-m: 13px;
+    --fs-l: 20px;
+
+    /* Colors */
+    --black: #121212;
+    --dark-blue: #19202D;
+    --white: #FFFFFF;
+    --light-grey: ##E7EAEE;
+    --ash-grey: #CFCFCF;
+    --dark-grey: #676D7E;
+    --blue-grey: #48556A;
+    --light-purple: #EDE4FF;
+    --purple: #A775F1;
+    --dark-purple: #733FC8;
+
+    /* Spacing */
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-s: 16px;
+    --spacing-m: 24px;
+    --spacing-l: 32px;
+    --spacing-xl: 40px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: var(--fs-m);
+    font-family: var(--ff-barlow);
+    font-weight: var(--fw-regular);
+}
+
+h1 {
+    font-size: var(--fs-l);
+    font-weight: var(--fw-bold);
+    line-height: 120%;
+}
+
+p {
+    font-size: var(--fs-m);
+    line-height: 140%;
+}
+
+img {
+    max-width: 100%;
+    max-width: 28px;
+    max-height: 28px;
+    border-radius: 48px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =============== */
+/* CONTAINER SYTLE */
+/* =============== */
+
+.container {
+    max-width: 375px;
+    margin: 5vh 5vw;
+}
+
+/* =============== */
+/* FLEX SYTLE      */
+/* =============== */
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-l);
+}
+
+/* =============== */
+/* CARD SYTLE      */
+/* =============== */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-s);
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: var(--spacing-l);
+}
+
+.card__head {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.card__status {
+    font-size: var(--fs-s);
+}
+
+/* =============== */
+/* CARD THEME     */
+/* =============== */
+
+.card--purple {
+    background-color: var(--dark-purple);
+    color: var(--white);
+}
+
+.card--purple p,
+.card--purple .card__status {
+    color: var(--light-purple);
+}
+
+.card--grey {
+    background-color: var(--blue-grey);
+    color: var(--white);
+}
+
+.card--grey p,
+.card--grey .card__status {
+    color: var(--light-grey)
+}
+
+.card--dark-blue {
+    background-color: var(--dark-blue);
+    color: var(--ash-grey);
+}
+
+/* =============== */
+/* BREAKPOINT     */
+/* =============== */
+@media (min-width: 768px) {
+
+    /* CONTAINER STYLE */
+
+    .container {
+        max-width: 768px;
+    }
+
+    /* GRID STYLE */
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "alias-card-1 alias-card-1"
+            "alias-card-2 alias-card-3"
+            "alias-card-4 alias-card-4"
+            "alias-card-5 alias-card-5"
+        ;
+        gap: var(--spacing-l);
+    }
+
+    #card-1 {
+        grid-area: alias-card-1;
+    }
+
+    #card-2 {
+        grid-area: alias-card-2;
+    }
+
+    #card-3 {
+        grid-area: alias-card-3;
+    }
+
+    #card-4 {
+        grid-area: alias-card-4;
+    }
+
+    #card-5 {
+        grid-area: alias-card-5;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    /* CONTAINER STYLE */
+
+    .container {
+        max-width: 1440px;
+    }
+
+    /* GRID STYLE */
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "alias-card-1 alias-card-1 alias-card-2 alias-card-5"
+            "alias-card-3 alias-card-4 alias-card-4 alias-card-5"
+        ;
+        gap: var(--spacing-l);
+    }
+
+    #card-1 {
+        grid-area: alias-card-1;
+    }
+
+    #card-2 {
+        grid-area: alias-card-2;
+    }
+
+    #card-3 {
+        grid-area: alias-card-3;
+    }
+
+    #card-4 {
+        grid-area: alias-card-4;
+    }
+
+    #card-5 {
+        grid-area: alias-card-5;
+    }
+}
