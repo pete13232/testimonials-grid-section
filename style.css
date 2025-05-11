@@ -19,7 +19,7 @@
     --black: #121212;
     --dark-blue: #19202D;
     --white: #FFFFFF;
-    --light-grey: ##E7EAEE;
+    --light-grey: #E7EAEE;
     --ash-grey: #CFCFCF;
     --dark-grey: #676D7E;
     --blue-grey: #48556A;
@@ -68,6 +68,7 @@ main {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 5vh 5vw;
 }
 
 /* =============== */
@@ -76,7 +77,6 @@ main {
 
 .container {
     max-width: 375px;
-    margin: 5vh 5vw;
 }
 
 /* =============== */
@@ -100,6 +100,13 @@ main {
     border: 1px solid black;
     border-radius: 8px;
     padding: var(--spacing-l);
+    position: relative;
+    font-weight: var(--fw-bold);
+}
+
+.card h1 {
+    position: relative;
+    z-index: 1;
 }
 
 .card__head {
@@ -107,37 +114,152 @@ main {
     gap: var(--spacing-xs);
 }
 
+.card__profile-name {
+    font-weight: var(--fw-bold);
+}
+
 .card__status {
     font-size: var(--fs-s);
 }
+
+.card__message {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-s);
+}
+
 
 /* =============== */
 /* CARD THEME     */
 /* =============== */
 
 .card--purple {
-    background-color: var(--dark-purple);
-    color: var(--white);
-}
+    --bg-color: var(--dark-purple);
+    --text-color: var(--light-purple);
+    --profile-name-color: var(--white);
+    --status-color: var(--light-purple);
+    --message-head-color: var(--white);
+    --message-p-color: var(--light-purple);
 
-.card--purple p,
-.card--purple .card__status {
-    color: var(--light-purple);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .card--grey {
-    background-color: var(--blue-grey);
-    color: var(--white);
+    --bg-color: var(--blue-grey);
+    --profile-name-color: var(--white);
+    --status-color: var(--ash-grey);
+    --message-head-color: var(--white);
+    --message-p-color: var(--light-grey);
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
-.card--grey p,
-.card--grey .card__status {
-    color: var(--light-grey)
+.card--white {
+    --bg-color: var(--white);
+    --profile-name-color: var(--blue-grey);
+    --status-color: var(--dark-grey);
+    --message-head-color: var(--blue-grey);
+    --message-p-color: var(--dark-grey);
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .card--dark-blue {
-    background-color: var(--dark-blue);
-    color: var(--ash-grey);
+    --bg-color: var(--dark-blue);
+    --profile-name-color: var(--white);
+    --status-color: var(--white);
+    --message-head-color: var(--ash-grey);
+    --message-p-color: var(--light-grey);
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* CARD PURPLE */
+
+.card--purple .card__profile-name {
+    color: var(--profile-name-color);
+}
+
+.card--purple .card__status {
+    color: var(--status-color);
+}
+
+.card--purple .card__message-title {
+    color: var(--message-head-color);
+}
+
+.card--purple .card__message-body {
+    color: var(--message-p-color);
+}
+
+/* CARD GREY */
+
+.card--grey .card__profile-name {
+    color: var(--profile-name-color);
+}
+
+.card--grey .card__status {
+    color: var(--status-color);
+}
+
+.card--grey .card__message-title {
+    color: var(--message-head-color);
+}
+
+.card--grey .card__message-body {
+    color: var(--message-p-color);
+}
+
+/* CARD WHITE */
+
+.card--white .card__profile-name {
+    color: var(--profile-name-color);
+}
+
+.card--white .card__status {
+    color: var(--status-color);
+}
+
+.card--white .card__message-title {
+    color: var(--message-head-color);
+}
+
+.card--white .card__message-body {
+    color: var(--message-p-color);
+}
+
+/* CARD DARK BLUE */
+
+.card--dark-blue .card__profile-name {
+    color: var(--profile-name-color);
+}
+
+.card--dark-blue .card__status {
+    color: var(--status-color);
+}
+
+.card--dark-blue .card__message-title {
+    color: var(--message-head-color);
+}
+
+.card--dark-blue .card__message-body {
+    color: var(--message-p-color);
+}
+
+/* ================== */
+/* CARD MISCELLANEOUS */
+/* ================== */
+
+.quotation {
+    display: none;
+}
+
+.highlight {
+    border: 2px solid #A775F1;
 }
 
 /* =============== */
@@ -185,6 +307,16 @@ main {
     #card-5 {
         grid-area: alias-card-5;
     }
+
+    /* CARD MISCELLANEOUS */
+
+    .quotation {
+        display: block;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 20%;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -226,5 +358,15 @@ main {
 
     #card-5 {
         grid-area: alias-card-5;
+    }
+
+    /* CARD MISCELLANEOUS */
+
+    .quotation {
+        display: block;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 10%;
     }
 }
