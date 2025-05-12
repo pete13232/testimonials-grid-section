@@ -78,7 +78,7 @@ Here are some example:
       </div>
 ```
 
-- **Block**: card-1
+- **Block**: `card-1`
 - **Element**: `card__head`, `card__profile`, `card__profile-name`, `card__status`, `card__message`, `card__message-title`
 - **Modifier**: `card--purple`
 
